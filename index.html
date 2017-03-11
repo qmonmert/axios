@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Axios</title>
+    <link href="https://bootswatch.com/darkly/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Axios - Strava API <small>by Quentin Monmert</small></h1>
+        <div class="jumbotron">
+            <h1>Welcome</h1>
+            <h4>This application uses Axios. Axios is a promise based HTTP client for the browser and node.js.</h4>
+            <h4>This application uses Strava API.</h4>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">GET Request</div>
+            <div class="panel-body">
+                <button class="btn btn-primary" onclick="performGetRequest()">Get last activity</button>
+                <button class="btn btn-danger" onclick="clearOutput()">Clear</button>
+                <div class="panel-body" id="getResult"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
