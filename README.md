@@ -7,3 +7,7 @@
 * [https://www.npmjs.com/package/live-server](https://www.npmjs.com/package/live-server)
 * [https://strava.github.io/api/](https://strava.github.io/api/)
 * [https://www.strava.com/settings/api](https://www.strava.com/settings/api)
+
+* firebase login
+* firebase init
+* firebase deploy
