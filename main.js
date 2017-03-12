@@ -1,5 +1,5 @@
-function performGetRequest() {
-    var resultElement = document.getElementById('getResult');
+function performGetRequestLastActivity() {
+    var resultElement = document.getElementById('getResultLastActivity');
     resultElement.innerHTML = '';
 
     axios.get('https://www.strava.com/api/v3/athlete/activities?access_token=7352ab3baeb484779ced1f9a35c03bcd4340a403&page=1&per_page=1')
@@ -11,9 +11,33 @@ function performGetRequest() {
         });
 }
 
-function clearOutput() {
-    var resultElement = document.getElementById('getResult');
+function performGetRequestActivities() {
+    var resultElement = document.getElementById('getResultActivities');
     resultElement.innerHTML = '';
+    $('#alertNbActivities').hide();
+    var nbActivities = document.getElementById('nbActivities').value;
+
+    if (nbActivities === '' || isNaN(nbActivities)) {
+        $('#alertNbActivities').show();
+    } else {
+        axios.get('https://www.strava.com/api/v3/athlete/activities?access_token=7352ab3baeb484779ced1f9a35c03bcd4340a403&page=1&per_page=' + nbActivities)
+            .then(function(response) {
+                resultElement.innerHTML = generateSuccessHTMLOutput(response);
+            })
+            .catch(function(error) {
+                resultElement.innerHTML = generateErrorHTMLOutput(response);
+            });
+    }
+}
+
+function clearOutput() {
+    var resultElement = document.getElementById('getResultLastActivity');
+    resultElement.innerHTML = '';
+    resultElement = document.getElementById('getResultActivities');
+    resultElement.innerHTML = '';
+    resultElement = document.getElementById('nbActivities');
+    resultElement.value = '';
+    $('#alertNbActivities').hide();
 }
 
 function generateSuccessHTMLOutput(response) {

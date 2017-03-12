@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Axios</title>
+    <title>Strava API</title>
     <link href="https://bootswatch.com/darkly/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -20,9 +20,24 @@
         <div class="panel panel-primary">
             <div class="panel-heading">GET Request</div>
             <div class="panel-body">
-                <button class="btn btn-primary" onclick="performGetRequest()">Get last activity</button>
+                <button class="btn btn-primary" onclick="performGetRequestLastActivity()">Get last activity</button>
                 <button class="btn btn-danger" onclick="clearOutput()">Clear</button>
-                <div class="panel-body" id="getResult"></div>
+                <div class="panel-body" id="getResultLastActivity"></div>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">GET Request With Parameters</div>
+            <div class="panel-body">
+                <div id="alertNbActivities" class="alert alert-danger alert-dismissible" role="alert" style="display: none;">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Error !</strong> Enter a number of activities.
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nbActivities" placeholder="Number of activities" />
+                </div>
+                <button class="btn btn-primary" onclick="performGetRequestActivities()">Get activities</button>
+                <button class="btn btn-danger" onclick="clearOutput()">Clear</button>
+                <div class="panel-body" id="getResultActivities"></div>
             </div>
         </div>
     </div>
